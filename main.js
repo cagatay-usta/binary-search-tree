@@ -9,6 +9,8 @@ tree.insert(2);
 console.log(tree);
 console.log(tree.levelOrder());
 console.log(tree.inorder());
+console.log(tree.preorder());
+console.log(tree.postorder());
 
 prettyPrint(tree.root);
 
@@ -29,5 +31,6 @@ tree2.insert(7);
 console.log(tree2);
 console.log(tree2.levelOrder());
 console.log(tree2.inorder());
+console.log(tree2.preorder());
 console.log(tree2.find(8));
 prettyPrint(tree2.root);

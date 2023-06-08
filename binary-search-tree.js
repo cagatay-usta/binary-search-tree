@@ -93,12 +93,27 @@ export default class Tree {
   inorder(node = this.root) {
     if (!node.data) return;
     const values = [];
-    // traverse the left subtree
     if (node.left) values.push(this.inorder(node.left));
-    // traverse the root
     values.push(node.data);
-    // traverse the right subtree
     if (node.right) values.push(this.inorder(node.right));
+    return values.flat();
+  }
+
+  preorder(node = this.root) {
+    if (!node.data) return;
+    const values = [];
+    values.push(node.data);
+    if (node.left) values.push(this.preorder(node.left));
+    if (node.right) values.push(this.preorder(node.right));
+    return values.flat();
+  }
+
+  postorder(node = this.root) {
+    if (!node.data) return;
+    const values = [];
+    if (node.left) values.push(this.postorder(node.left));
+    if (node.right) values.push(this.postorder(node.right));
+    values.push(node.data);
     return values.flat();
   }
 }
