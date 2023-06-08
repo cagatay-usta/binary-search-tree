@@ -116,4 +116,23 @@ export default class Tree {
     values.push(node.data);
     return values.flat();
   }
+
+  depth(data, node = this.root) {
+    let counter = 0;
+    if (data === node.data) return counter;
+    if (data < node.data) return (counter += this.depth(data, node.left) + 1);
+    if (data > node.data) return (counter += this.depth(data, node.right) + 1);
+    // if not found return null
+    return null;
+  }
+
+  height(data, node = this.find(data)) {
+    // return null if not found
+    if (!node) return null;
+    let height = 0;
+    if (node.left || node.right) {
+      return (height += Math.max(this.height(data, node.left) + 1, this.height(data, node.right) + 1));
+    }
+    return height;
+  }
 }

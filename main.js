@@ -11,6 +11,8 @@ console.log(tree.levelOrder());
 console.log(tree.inorder());
 console.log(tree.preorder());
 console.log(tree.postorder());
+console.log(tree.depth(6345));
+console.log(tree.height(67));
 
 prettyPrint(tree.root);
 
@@ -33,4 +35,5 @@ console.log(tree2.levelOrder());
 console.log(tree2.inorder());
 console.log(tree2.preorder());
 console.log(tree2.find(8));
+console.log(tree2.height(3));
 prettyPrint(tree2.root);
