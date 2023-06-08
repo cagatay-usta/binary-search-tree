@@ -8,6 +8,8 @@ const tree = new Tree(testArray2);
 tree.insert(2);
 console.log(tree);
 console.log(tree.levelOrder());
+console.log(tree.inorder());
+
 prettyPrint(tree.root);
 
 const tree2 = new Tree();
@@ -26,5 +28,6 @@ tree2.insert(7);
 // tree2.delete(3);
 console.log(tree2);
 console.log(tree2.levelOrder());
+console.log(tree2.inorder());
 console.log(tree2.find(8));
 prettyPrint(tree2.root);

@@ -89,4 +89,16 @@ export default class Tree {
     }
     return values;
   }
+
+  inorder(node = this.root) {
+    if (!node.data) return;
+    const values = [];
+    // traverse the left subtree
+    if (node.left) values.push(this.inorder(node.left));
+    // traverse the root
+    values.push(node.data);
+    // traverse the right subtree
+    if (node.right) values.push(this.inorder(node.right));
+    return values.flat();
+  }
 }
