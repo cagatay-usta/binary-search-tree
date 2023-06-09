@@ -135,4 +135,24 @@ export default class Tree {
     }
     return height;
   }
+
+  isBalanced(node = this.root) {
+    if (node.left && node.right) {
+      if (Math.abs(this.height(node.left.data) - this.height(node.right.data)) > 1) return false;
+    }
+    if (node.left) return this.isBalanced(node.left);
+    if (node.right) return this.isBalanced(node.right);
+    return true;
+  }
+
+  rebalance() {
+    // if balanced return the same
+    if (this.isBalanced()) return this;
+    // make an array out of the tree
+    const builderArray = this.inorder();
+    // feed the array to build tree function
+    this.root = this.buildTree(builderArray);
+    // return the new pointer to root
+    return this.root;
+  }
 }
